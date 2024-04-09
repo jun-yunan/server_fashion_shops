@@ -45,35 +45,35 @@ export default function Home() {
     router.push("/auth/sign-in");
   }
 
-  React.useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await getProductsAll();
-        if (data != null) {
-          //   console.log(data);
+  // React.useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const data = await getProductsAll();
+  //       if (data != null) {
+  //         //   console.log(data);
 
-          setDataTable(data);
-          console.log(dataTable);
+  //         setDataTable(data);
+  //         console.log(dataTable);
 
-          toast({
-            title: "Success.",
-            description: "Get data successfully.",
-          });
-        } else {
-          setDataTable((prev) => prev);
-        }
-      } catch (error) {
-        console.log(error);
-        toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: "There was a problem with your request.",
-          action: <ToastAction altText="Try again">Try again</ToastAction>,
-        });
-      }
-    };
-    getData();
-  }, []);
+  //         toast({
+  //           title: "Success.",
+  //           description: "Get data successfully.",
+  //         });
+  //       } else {
+  //         setDataTable((prev) => prev);
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //       toast({
+  //         variant: "destructive",
+  //         title: "Uh oh! Something went wrong.",
+  //         description: "There was a problem with your request.",
+  //         action: <ToastAction altText="Try again">Try again</ToastAction>,
+  //       });
+  //     }
+  //   };
+  //   getData();
+  // }, []);
 
   return <main className="flex min-h-screen flex-col items-center"></main>;
 }

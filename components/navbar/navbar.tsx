@@ -11,7 +11,7 @@ import {
   Dropdown,
   DropdownMenu,
 } from "@nextui-org/react";
-import { AcmeLogo } from "./AcmeLogo.tsx";
+import { AcmeLogo } from "./acme-logo.tsx";
 
 import {
   ChevronDown,
@@ -21,7 +21,7 @@ import {
   Server,
   TagUser,
   Scale,
-} from "./Icons.tsx";
+} from "./icons.tsx";
 
 export default function NavigationBar() {
   const icons = {
