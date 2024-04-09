@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import HeaderHome from "@/components/home/header-home";
 import { Toaster } from "@/components/ui/toaster";
+import { NextUIProviders } from "@/providers/next-ui-provider";
+import NavigationBar from "@/components/navbar/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={inter.className}>
-        <div className="flex flex-col">
-          <HeaderHome />
-          {children}
-        </div>
-        <Toaster />
+        <NextUIProviders>
+          <div className="flex flex-col">
+            <NavigationBar />
+            {children}
+          </div>
+          <Toaster />
+        </NextUIProviders>
       </body>
     </html>
   );
